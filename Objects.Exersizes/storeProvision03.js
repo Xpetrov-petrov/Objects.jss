@@ -5,7 +5,7 @@ function storeProvision(stock, orderedProducts) {
         let productName = stock[i];
         let qty = Number(stock[i + 1]);
 
-        products[productName] = qty;  // ???
+        products[productName] = qty;  // ???  productName - е ключа ,а qty е стойността(така добавяме в обектите(product{})); все едно push при arrays;
     }
 
     for(let j = 0; j < orderedProducts.length; j += 2){
@@ -13,13 +13,13 @@ function storeProvision(stock, orderedProducts) {
         let qty = orderedProducts[j + 1];
       
 
-        if(productName in products){            
+        if(productName in products){      // пример имаме ли във products(новостздаденият обект) Flouer(примерно)?        
             products[productName] += Number(qty);
         }else{
-            products[productName] = qty;
+            products[productName] = qty;  // ако няма създаваме нов ключ Flower(примерно) със стойност qty;
         }
     }
-    let entries = Object.entries(products);
+    let entries = Object.entries(products);  // превръща целия окект в масив от масиви за да можем да интерираме;
 
     for(let entry of entries){
         console.log(entry.join(' -> '));
