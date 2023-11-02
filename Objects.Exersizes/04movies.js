@@ -20,12 +20,12 @@ function manageMovies(arr) {
       let movie = movies.find(movie => movie.name == movieName);
 
       if (movie) {
-        movie.data = date;
+        movie.date = date;
       }
     } 
   }
   for(let movie of movies){
-     if(movie.name && movie.director && movie.data){
+     if(movie.name && movie.director && movie.date){
       console.log(JSON.stringify(movie));
      }
   }
