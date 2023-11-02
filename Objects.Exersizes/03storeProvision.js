@@ -13,7 +13,7 @@ function storeProvision(stock, orderedProducts) {
         let qty = orderedProducts[j + 1];
       
 
-        if(productName in products){      // пример имаме ли във products(новостздаденият обект) Flouer(примерно)?        
+        if(productName in products){      // пример имаме ли във products(новостздаденият обект) Flouer/Pasta(примерно)?        
             products[productName] += Number(qty);
         }else{
             products[productName] = qty;  // ако няма създаваме нов ключ Flower(примерно) със стойност qty;
