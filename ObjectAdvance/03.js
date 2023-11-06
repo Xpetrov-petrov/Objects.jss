@@ -1,11 +1,17 @@
 function solve(input){
 let calendar = {};
+
 for(let item of input){
     let [day,name] = item.split(' ');
-    calendar[day] = name;
-
+   
+    if(calendar.hasOwnProperty(day)){
+        console.log(`Conflict on ${day}`);
+        continue;
+    }
 }
-console.log(calendar);
+calendar[day] = name;
+console.log();
+
 }
 solve(['Monday Peter',
 'Wednesday Bill',

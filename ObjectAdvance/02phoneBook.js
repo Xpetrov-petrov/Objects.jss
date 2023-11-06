@@ -1,4 +1,4 @@
-function solve(input){
+function phoneBook(input){
     let phoneBook = {};
 
     for(let item of input){
@@ -11,7 +11,7 @@ function solve(input){
     console.log(name, '->', phone );
   }
 }
-solve(['Tim 0834212554',
+phoneBook(['Tim 0834212554',
 'Peter 0877547887',
 'Bill 0896543112',
 'Tim 0876566344']);
