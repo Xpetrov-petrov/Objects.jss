@@ -17,7 +17,7 @@ function solve(input) {
         sorted[name] = address;//// dobavqme svoistva na 'sorted' po tozi nachin
 
     }
-    for (let [name, address] of Object.entries(sorted)) {
+    for (let [name, address] of Object.entries(sorted)) {  // сортираме обратно в масив
         console.log(name, '->', address);
     }
 }
@@ -39,3 +39,22 @@ solve(['Bob:Huxley Rd',
 // 'Peter:Carlyle Ave',
 // 'Bill:Ornery Rd']
 // )
+
+//
+function solve(input){
+let addressBook = {};
+
+for(let item of input){
+    let [name,address] = item.split(":");
+
+    addressBook[name] = address;
+ }
+ let entries = Object.entries(addressBook);
+ entries.sort((a,b) => a[0].localeCompare(b[0]));
+
+ let sorted = Object.fromEntries(entries);
+
+ for(let [name,address] of Object.entries(sorted)){
+    console.log(name,'->', age)
+ }
+}
