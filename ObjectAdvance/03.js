@@ -10,7 +10,7 @@ for(let item of input){
     }
 }
 calendar[day] = name;
-console.log();
+console.log(entr);
 
 }
 solve(['Monday Peter',
