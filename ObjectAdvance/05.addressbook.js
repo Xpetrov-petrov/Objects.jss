@@ -40,7 +40,7 @@ solve(['Bob:Huxley Rd',
 // 'Bill:Ornery Rd']
 // )
 
-//
+/*
 function solve(input){
 let addressBook = {};
 
@@ -52,9 +52,10 @@ for(let item of input){
  let entries = Object.entries(addressBook);
  entries.sort((a,b) => a[0].localeCompare(b[0]));
 
- let sorted = Object.fromEntries(entries);
+ let sorted = Object.fromEntries(entries); // обратно към масив
 
  for(let [name,address] of Object.entries(sorted)){
-    console.log(name,'->', age)
+    console.log(name,'->', age);
  }
 }
+/*
