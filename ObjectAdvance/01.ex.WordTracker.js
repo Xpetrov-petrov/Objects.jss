@@ -11,7 +11,7 @@ function WordTracker(arr) {
             objecta[word]++;
         }
     }
-    let entries = Object.entries(objecta).sort((a,b) => b[1] - a[1]);
+    let entries = Object.entries(objecta).sort((a,b) => b[1] - a[1]); // сортираме в нисходящ ред
 
     for(let [word,repeats] of entries){
         console.log(`${word} - ${repeats}`);
