@@ -1,12 +1,12 @@
 function cardGame(arr) {
     let playersCards = {};
-    // let array = [];
+
     let powerValues = {2: 2, 3 :3, 4 :4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, J: 11, Q: 12, K: 13, A: 14};
     let typesValues = { S: 4, H: 3 ,D: 2, C: 1 };
 
     for (let playerDeck of arr) {
         let [playerName, cardsAsString] = playerDeck.split(': ');
-        let cards = cardsAsString.split(', ');
+        let cards = cardsAsString.split(', ');   // let array = [];
 
         if(playerName in playersCards){ // проверяваме дали името го има в обекта
             playersCards[playerName].push(...cards);// разбива масива на отделни елементи , защото ако използваме само push ще стане масив във масива; 
@@ -18,7 +18,7 @@ function cardGame(arr) {
     let entries = Object.entries(playersCards);
  
     for(let[name,deck] of entries){
-        let uniqueDeck = new Set(deck);
+        let uniqueDeck = new Set(deck);//за да премахнем повтарящите се карти
         let deckValue = 0;
 
         for(let card of uniqueDeck){
