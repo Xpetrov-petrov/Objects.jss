@@ -1,7 +1,7 @@
 function oddOccurrences(arr) {
     let words = arr.split(' ');
     let wordCount = {};
-    let shifted = 0;
+    let shifted = '';
 
     for (let word of words) {
         word = word.toLowerCase(); // само малки букви
@@ -21,12 +21,18 @@ function oddOccurrences(arr) {
             result.push(word);
         }
     }
+     
+   for(let word of result){ 
     
-   for(let word of result){
-    if(word = Number){
+    if(word == '1'||'5'){
         shifted = result.shift()
+        
+    }else{
+        break;
     }
-    result.push(...)
+
+    result.push(shifted)
+   
    }
 
     console.log(result.join(' '));
