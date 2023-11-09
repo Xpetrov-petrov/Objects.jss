@@ -1,21 +1,25 @@
-      
-function oddOccurrences(arr) {
-    let words = arr.toLowerCase().split(' ');
-    let object = {};
-   
-    for (let word of words) {
-      if (word in object) {
-        object[word]++;
-      } else {
-        object[word] = 1;
-      }
-    }
-    let oddOccur = Object.keys(object)
-      .filter((word) => object[word] % 2 === 1)
-      .sort((a, b) => a.localeCompare(b));
+function solve(input) {
+  let words = input.split(" ").map(el => el.toLowerCase());
+  let collection = {};
 
-      
-   
-    console.log(oddOccur);
-  }
-  oddOccurrences('Java C# Php PHP Java PhP 3 C# 3 1 5 C#'); //ObjectAdvance\02.ex.OddOccurents.js
+  collection = words.reduce((acc, cur, i) => {
+      if (!acc.hasOwnProperty(cur)) {
+          acc[cur] = 1;
+      } else {
+          acc[cur]++;
+      }
+
+      return acc;
+  }, {});
+
+  collection = Object.entries(collection)
+      .filter(([word, value]) => {
+          if (value % 2 !== 0) {
+              return word;
+          }
+      })
+      .map(el => el[0]);
+
+  console.log(collection.join(" "));
+}
+solve('Java C# Php PHP Java PhP 3 C# 3 1 5 C#'); //ObjectAdvance\02.ex.OddOccurents.js
