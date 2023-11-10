@@ -1,13 +1,23 @@
-let object = {
-    "Plamen Petrov": '0889999',
-    'Vera Vasileva': '0885555',
-     'Ivan Gavrilov': '0888888'
-};
-// console.log(object)
+function piccolo(arr) {
+    let newArr = [];
+    let object = {};
 
-for(let word in object){
-    console.log(word, "->", object[word]);
-   
+    for (let word of arr) {
+
+        let [title, number] = word.split(', ');
+
+        if (title == "IN") {
+            object[title] = number;
+            
+        } else if (title == "OUT") {
+            delete object[number];
+        }
+    }
+
+    console.log(object);
 }
 
-console.log(object)
+piccolo(['IN, CA2844AA',
+    'IN, CA1234TA',
+    'OUT, CA2844AA',
+    'OUT, CA1234TA']);

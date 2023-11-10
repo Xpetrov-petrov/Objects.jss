@@ -22,4 +22,4 @@ function solve(input) {
 
   console.log(collection.join(" "));
 }
-solve('Java C# Php PHP Java PhP 3 C# 3 1 5 C#'); //ObjectAdvance\02.ex.OddOccurents.js
+solve('Java C# Php PHP Java PhP 3 C# 3 1 5 C#'); //ObjectAdvance\02.ex.OddOccurents.js 100/100 judge
