@@ -1,7 +1,8 @@
+/*
 function extractFile(input){
     let firstIndex = input.split('\\').pop();
-    let lastDotIndex = firstIndex.lastIndexOf('.');
-
+    let lastDotIndex = firstIndex.lastIndexOf('.');   // всичко преди последната точка е имато на файла , затова решение 2 не работи
+                // последният индекс да бъде точка
     let fileName = firstIndex.slice(0, lastDotIndex);
     let fileExtension = firstIndex.slice(lastDotIndex + 1);
 
@@ -10,17 +11,18 @@ function extractFile(input){
 
 }
 extractFile('C:\\Internal\\training-internal\\Template.pptx' ); 
+*/
 
 
-/*function extractFile(input){
+function extractFile(input){
     let material = input.split('\\').pop();
     splitedMaterial = material.split('.');
 
-    let firstIndex = splitedMaterial.shift();
     let lastIndex = splitedMaterial.pop();
+    let firstIndex = splitedMaterial.join('.');  // ако не използваме join 80//100 in Judge
     
     console.log(`File name: ${firstIndex}`);
     console.log(`File extension: ${lastIndex}`);
 
 }
-extractFile('C:\\Internal\\training-internal\\Template.pptx' );            // 80/100 in judge */
+extractFile('C:\\Internal\\training-internal\\Template.pptx' );            // 100/100 in judge */
