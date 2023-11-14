@@ -4,8 +4,8 @@ function revealwords(wordsStr, text){
     for(let word of words){
         let repeatCount = word.length;
         
-        let startTemplate = '*'.repeat(repeatCount);
-        text = text.replace(startTemplate, word)
+        let startTemplate = '*'.repeat(repeatCount); // repeat - повтори;
+        text = text.replace(startTemplate, word) // replace - замени startTemplate с word; 
     }
  console.log(text);
 }
