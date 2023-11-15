@@ -19,7 +19,7 @@ function extractFile(input){
     splitedMaterial = material.split('.');
 
     let lastIndex = splitedMaterial.pop();
-    let firstIndex = splitedMaterial.join('.');  // ако не използваме join 80//100 in Judge
+    let firstIndex = splitedMaterial.join('.');  // (join) Това е необходимо, защото когато разделяш с split('.'), ти премахваш точката между името на файла и разширението. Така чрез .join('.') ти връщаш точката и съединяваш отново името на файла с разширението.
     
     console.log(`File name: ${firstIndex}`);
     console.log(`File extension: ${lastIndex}`);
