@@ -8,7 +8,7 @@ function hashTag(text) {
         let isValid = true;
 
         for (let char of word) {
-            if (!/[A-Za-z]/.test(char)) {
+            if (!/[A-Za-z]/.test(char)) { // '//'-обявяваме regEx; []-диапазона; 
                 isValid = false;
                 break; // прекъсва само втория цикъл
             }
