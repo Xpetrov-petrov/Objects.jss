@@ -1,4 +1,4 @@
-function solve([input]){
+function solve([ ]){
 
     let patern = /\+359([ -])2\1\d{3}\1\d{4}/g;
 
