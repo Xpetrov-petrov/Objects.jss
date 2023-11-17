@@ -10,7 +10,7 @@ function hardWords(arr) {
             slot = slot.slice(0, slot.length - 1);
         }
      
-        let wordToFill = wordsArr.find(word => word.length = slot.length);
+        let wordToFill = wordsArr.find(word => word.length == slot.length);
         letter = letter.replace(slot, wordToFill);
     }
     console.log(letter);
