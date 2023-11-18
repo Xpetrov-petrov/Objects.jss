@@ -2,18 +2,17 @@ function furniture(input) {
     let items = [];
     let totalPrice = 0;
 
-    let pattern = />>(?<name>[A-Z][A-Za-z]+)<<(?<price>\d+\.?\d*)!(?<qty>\d+)/;
+    let pattern = />>(?<name>[A-Z][A-Za-z]+)<<(?<price>\d+\.?\d*)!(?<qty>\d+)/g;
 
     let command = input.shift();
 
     while (command != 'Purchase') {
-        let match = command.match(pattern);
+        let match = pattern.exec(command);
 
-        if (match !== null) {
+        if (match) {
             let { name, price, qty } = match.groups;
 
             let furniturePrice = Number(price) * Number(qty);
-
             items.push(name);
             totalPrice += furniturePrice;
         }
@@ -23,11 +22,10 @@ function furniture(input) {
 
     console.log('Bought furniture:');
     if (items.length > 0) {
-        console.log(items.join('\n'));
+        items.forEach(item => console.log(item));
     }
-    console.log(`Total money spend: ${totalPrice.toFixed(2)}`);
+    console.log(`Total money spend: ${totalPrice}`);
 }
-
 furniture(['>>Sofa<<312.23!3',
     '>>TV<<300!5',
     '>Invalid<<!5',
