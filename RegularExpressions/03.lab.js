@@ -1,6 +1,6 @@
 function solve([input]) {
     let patern = /(?<day>\d{2})(?<sep>[-./])(?<month>[A-Z][a-z]{2})\k<sep>(?<year>\d{4})/g;
-
+               ///              //!!!!!                                   !!!! 
     let match = patern.exec(input);           // ВИНАГИИ!!!
     while (match != null) {
         let { day, month: month, year } = match.groups;
