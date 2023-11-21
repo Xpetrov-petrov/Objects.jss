@@ -10,7 +10,7 @@ function softuniBarIncome(arr) {
        let {customer, product, count, price} = match.groups;
        let totalPrice = Number(count) * Number(price);
        income += totalPrice
-       console.log(`${customer}: ${product} - ${totalPrice.toFixed(2)}$`);
+       console.log(`${customer}: ${product} - ${totalPrice.toFixed(2)}`);
      }
         command = arr.shift();
     }
