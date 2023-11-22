@@ -7,7 +7,7 @@ function inventory(input){
      heroes.push(hero);
 
     }
-    heroes = heroes.sort((a, b) => b.level - a.level);
+    heroes = heroes.sort((a, b) => a.level - b.level);
     console.log(heroes);
     
     for (let hero of heroes) {
