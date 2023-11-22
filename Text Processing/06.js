@@ -1,7 +1,7 @@
 
 function splitPascalCase(input) {
     // Използвайте регулярен израз за разделяне на низа във формат PascalCase на думи
-    let words = input.split(/[A-Z][a-z]+/);
+    let words = input.split(/(?=[A-Z])/);
     
     // Съединете думите със запетая и интервал
     let result = words.join(', ');
