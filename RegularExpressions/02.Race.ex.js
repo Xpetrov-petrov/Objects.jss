@@ -27,7 +27,7 @@ function solve(arr) {
     }
     let sortedResult = Object.entries(result).sort((a, b) => b[1] - a[1]);
 
-          console.log(sortedResult);
+        //   console.log(sortedResult);
         //   console.log(Object.entries(result));
     console.log(`1st place: ${sortedResult[0][0]}`);
     console.log(`2nd place: ${sortedResult[1][0]}`);
