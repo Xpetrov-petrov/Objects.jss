@@ -1,4 +1,5 @@
-function inventory(input) {     // 100/100 in judge
+function inventory(input) {  // 100/100 in judge
+    let heroes = [];
 
     for (let line of input) {
         let [name, level, items] = line.split(' / ');
@@ -14,7 +15,7 @@ function inventory(input) {     // 100/100 in judge
         console.log(`items => ${hero.items.join(', ')}`);
     }
 }
-
+                     
 inventory([
     'Isacc / 25 / Apple, GravityGun',
     'Derek / 12 / BarrelVest, DestructionSword',
