@@ -30,7 +30,7 @@ function SecretChat(input) {  // задача за текстообработк�
             let parts = message.split(match);
             message = parts.join(replacement);
             break;        
-     }
+     }                              
      console.log(message);
     }
     console.log(`You have a new text message: ${message}`);
