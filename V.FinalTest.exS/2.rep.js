@@ -1,4 +1,4 @@
-function mirrorWords(input) {
+function solve(input) {
     let text = input[0];
     let pattern = /(@|#)([A-Za-z]{3,})\1\1([A-Za-z]{3,})\1/g;
     let match;
@@ -26,7 +26,7 @@ function mirrorWords(input) {
     } else {
         console.log("The mirror words are:");
         console.log(validPairs.join(', '));
-    }
+    }                                                                                    //V.FinalTest.exS/2.rep.js
 }
 
 solve([ '#po0l##l0op# @bAc##cAB@ @LM@ML@ #xxxXxx##xxxXxx# @aba@@ababa@' ])

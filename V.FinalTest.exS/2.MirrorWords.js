@@ -1,15 +1,35 @@
 function solve([arr]){   // regExp
-
+    let result = [];
+    let count = 0;
     let pattern = /(@|#)([A-Za-z]{3,})\1\1([A-Za-z]{3,})\1/gi;
     
     let match = pattern.exec(arr);
-
     while(match){
-        console.log(match);
-        match = pattern.exec(arr)
+        count++;
+        let first = match[2];
+        let second = match[3];
+
+        if(first == second.split('').reverse().join('')){
+            result.push(`${first} <=> ${second}`);
+        }
+      match = pattern.exec(arr);
+    
     }
+if(count == 0){
+    console.log('No word pairs found!');
+}else{
+    console.log(`${count} word paris found!`);
+}
+if(result.length == 0){
+    console.log('No mirror words!');
+}else{
+    console.log('The mirror words are:');
+    console.log(result.join(', '));
+}
 }
 solve([ '#po0l##l0op# @bAc##cAB@ @LM@ML@ #xxxXxx##xxxXxx# @aba@@ababa@' ])
 // solve([
-//     '@mix#tix3dj#poOl##loOp#wl@@bong&song%4very$long@thong#Part##traP##@@leveL@@Level@##car#rac##tu@pack@@ckap@#rr#sAw##wAs#r#@w1r'
-//   ])
+    //     '@mix#tix3dj#poOl##loOp#wl@@bong&song%4very$long@thong#Part##traP##@@leveL@@Level@##car#rac##tu@pack@@ckap@#rr#sAw##wAs#r#@w1r'
+    //   ])
+    
+    //V.FinalTest.exS/2.MirrorWords.js
