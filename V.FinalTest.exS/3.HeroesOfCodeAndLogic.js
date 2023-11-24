@@ -1,81 +1,85 @@
 function heroesGame(input) {     //- a hero can have a maximum of 100 HP and 200 MP
-    
-    let party = {};                            // !!!!
-    let n = input.shift();
 
-    for (let i = 0; i < n; i++) {
-        let heroData = (input.shift());
-       
-        let [name, health, mana] = heroData.split(' ');
+   let party = {};                            // !!!!
+   let n = input.shift();
 
-        let hero = { //suzdavame obekt
-            hp: Number(health), //!!!!
-            mp: Number(mana)    //!!!!
+   for (let i = 0; i < n; i++) {
+      let heroData = (input.shift());
 
-        }
-        party[name] = hero; // добавяме ключ name към обекта със следните стойности; //!!!!
-    }
-     while(input[0] != 'End'){
-        let line = input.shift();
-        let tokens = line.split(' - ');
-        let command = tokens[0];
-        let name = tokens[1];
-        let hero = party[name]
+      let [name, health, mana] = heroData.split(' ');
 
-        switch(command){
-            case'Heal': ////////////////////////////////////////////////////
+      let hero = { //suzdavame obekt
+         hp: Number(health), //!!!!
+         mp: Number(mana)    //!!!!
+
+      }
+      party[name] = hero; // добавяме ключ name към обекта със следните стойности; //!!!!
+   }
+   while (input[0] != 'End') {
+      let line = input.shift();
+      let tokens = line.split(' - ');
+      let command = tokens[0];
+      let name = tokens[1];
+      let hero = party[name]
+
+      switch (command) {
+         case 'Heal': ////////////////////////////////////////////////////
             let hpToRestore = Number(tokens[2]);
 
-            if(hpToRestore + hero.hp > 100){
+            if (hpToRestore + hero.hp > 100) {
                hpToRestore = 100 - hero.hp;
             }
             hero.hp += hpToRestore;
             console.log(`${name} healed for ${hpToRestore} HP!`);
-               break;
-            case'Recharge'://///////////////////////////////////////////////
+            break;
+         case 'Recharge'://///////////////////////////////////////////////
             let mpToRestore = Number(tokens[2]);
 
-            if(mpToRestore + hero.mp > 200){
+            if (mpToRestore + hero.mp > 200) {
                mpToRestore = 200 - hero.mp;
             }
             hero.mp += mpToRestore;
-            console.log(`${name} recharget for ${mpToRestore} MP!`);
-               break;
-            case'CastSpell':
+            console.log(`${name} recharged for ${mpToRestore} MP!`);
+            break;
+         case 'CastSpell':
             let mpCost = Number(tokens[2]);
             let spellName = tokens[3];
-            if(hero.mp >= mpCost){
-               hero.mp - mpCost;
+            if (hero.mp >= mpCost) {
+               hero.mp -= mpCost;
                console.log(`${name} has successfully cast ${spellName} and now has ${hero.mp} MP!`);
-            }else{
+            } else {
                console.log(`${name} does not have enough MP to cast ${spellName}!`);
             }
-               break;
-            case'TakeDamage':
+            break;
+         case 'TakeDamage':
             let damage = Number(tokens[2]);
             let attacher = tokens[3];
             hero.hp -= damage;
-            if(hero.hp > 0){
+            if (hero.hp > 0) {
                console.log(`${name} was hit for ${damage} HP by ${attacher} and now has ${hero.hp} HP left!`)
-            }else{
+            } else {
                console.log(`${name} has been killed by ${attacher}!`);
                delete party[name];
             }
-               break;
-        }
-     }
+            break;
+      }
+   }
+   //print result
+   for (let name in party) {
+      let hero = party[name];
+      console.log(name);
+      console.log(`  HP: ${hero.hp}`);
+      console.log(`  MP: ${hero.mp}`);
+   }
 
-
-
-   
 }
 heroesGame([
-    '2',                                                           //V.FinalTest.exS\3.HeroesOfCodeAndLogic.js
-    'Solmyr 85 120',
-    'Kyrre 99 50',                                                 //V.FinalTest.exS/3.HeroesOfCodeAndLogic.js
-    'Heal - Solmyr - 10',
-    'Recharge - Solmyr - 50',
-    'TakeDamage - Kyrre - 66 - Orc',
-    'CastSpell - Kyrre - 15 - ViewEarth',
-    'End'
+   '2',                                                           //V.FinalTest.exS\3.HeroesOfCodeAndLogic.js
+   'Solmyr 85 120',
+   'Kyrre 99 50',                                                 //V.FinalTest.exS/3.HeroesOfCodeAndLogic.js
+   'Heal - Solmyr - 10',
+   'Recharge - Solmyr - 50',
+   'TakeDamage - Kyrre - 66 - Orc',
+   'CastSpell - Kyrre - 15 - ViewEarth',
+   'End'
 ])
