@@ -15,10 +15,10 @@ function solve([arr]){   // regExp
       match = pattern.exec(arr);
     
     }
-if(count == 0){
+if(count == 0){          pairs
     console.log('No word pairs found!');
 }else{
-    console.log(`${count} word paris found!`);
+    console.log(`${count} word pairs found!`);
 }
 if(result.length == 0){
     console.log('No mirror words!');
