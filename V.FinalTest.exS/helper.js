@@ -1,13 +1,13 @@
-function  heroesGame(arr){
-    let heroesCount = arr.shift();
-    let heroes = [];
+function  heroesGame(input){
+    let heroesCount = input.shift();
+    let heroes = {};
 
     for(let i = 0; i < heroesCount; i++){
-        heroInfo = arr[i].split(' '); // Присвояване на стойност на разгънатия масив
-        let [name, hp, mp] = heroInfo;
-        heroes.push(hero);
+        let  heroInfo = input.shift();
+        let [name, hp, mp] = heroInfo.split(' ');
+       /!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+               console.log(heroInfo);
     }
-console.log(hero);
 }
 heroesGame([
     '2',
