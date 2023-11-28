@@ -27,10 +27,10 @@ function solve(arr1, arr2) {
     }
 
     let entries = Object.entries(products)
-    
+
     for(let entry of entries){
         console.log(entry.join(' -> '));
-    }
+    }           // entru[0] -> entry[1]
     
     
   
