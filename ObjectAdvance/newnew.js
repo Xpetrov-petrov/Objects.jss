@@ -6,5 +6,5 @@ let peter = {
 solve(peter);
 
 function solve(person){
-console.log(person);
+console.log(person );
 }
