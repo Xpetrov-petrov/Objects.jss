@@ -8,8 +8,6 @@ console.log(`town: ${townName}, latitude: ${Number(latitude).toFixed(2)} longitu
 
 }
 
- //{ town: 'Sofia', latitude: '42.70', longitude: '23.33'
-
 }
 solve(['Sofia | 42.696552 | 23.32601',
 'Beijing | 39.913818 | 116.363625']
