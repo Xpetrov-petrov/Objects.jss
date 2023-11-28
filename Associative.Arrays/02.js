@@ -1,9 +1,13 @@
 function solve(inpt) {
-    inpt = inpt.split(' ');
-    let object = [];
+    inpt = inpt.split(' ').map(a => a.toLowerCase);
+    let object = {};
 
     for (let word of inpt) {
         object.push(word);
+        
+        if(word.toLowerCase() in object && ){
+
+        }
     }
     console.log(object);
 }
