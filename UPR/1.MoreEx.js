@@ -1,16 +1,19 @@
-let myAsArr = {
-    'john Smith': '11111111111111',
-    'Peter Petrov': 33333333333333,
-        'Ivan ivanov':888888888888
-}
-console.log(myAsArr);
+function solve(arr){
+   let obj = {};
+for(let item of arr){
+    let [name , phone] = item.split(' ');
+   obj[name] = phone;
 
-for(let i in myAsArr){
-    console.log(`${i} -> ${myAsArr[i]}`);
 }
-let entries = Object.entries(myAsArr)
-
-
-for(let j of entries){
-    console.log(j);
+let ogi = Object.entries(obj);
+for(let gi of ogi){
+    
+    console.log(`${gi[0]} -> ${gi[1]}`);
 }
+}
+solve([
+    'Tim 0834212554',
+    'Peter 0877547887',
+    'Bill 0896543112',
+    'Tim 0876566344'
+  ])
