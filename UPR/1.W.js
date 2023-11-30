@@ -9,10 +9,10 @@ for(let word of arr){
         obj1[firstWord] = counter1
 
     }
-    // if(word == secondWord){
-    //     counter2++
-    //     obj1[secondWord] = counter2
-    // }
+    if(word == secondWord){
+        counter2++
+        obj1[secondWord] = counter2
+    }
     
 }
 let entries = Object.entries(obj1);
@@ -26,4 +26,27 @@ solve([
     'first', 'sentence', 'Here', 'is',
     'another', 'the', 'And', 'finally', 'the',
     'the', 'sentence']
-    )
+    ) 
+
+
+
+    // беттер
+    function WordTracker(arr) {
+        let searchedWords = arr.shift().split(' ');
+        let objecta = {};
+    
+        for (let word of searchedWords) {
+            objecta[word] = 0;
+        }
+    
+        for (let word of arr) {
+            if (word in objecta) {
+                objecta[word]++;
+            }
+        }
+        let entries = Object.entries(objecta).sort((a,b) => b[1] - a[1]);
+    
+        for(let [word,repeats] of entries){
+            console.log(`${word} - ${repeats}`);
+        }
+    }
