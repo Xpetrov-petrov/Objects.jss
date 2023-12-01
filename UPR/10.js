@@ -1,6 +1,6 @@
 function solve(str) {
     let specialMatterials = { motes: 0, shards: 0, fragments: 0 };
-    let matterials = {};
+    let junkMaterial = {};
     let SpFrs = {};
 
     str = str.split(' ');
@@ -12,7 +12,7 @@ function solve(str) {
         if (material in specialMatterials) {
             specialMatterials[material] += qty
         } else {
-            matterials[material] = qty;
+            junkMaterial[material] = qty;
         }
         
         if(specialMatterials[material] >= 250){
@@ -27,7 +27,12 @@ function solve(str) {
                 specilaFragment = 'Valanyr';
                 SpFrs[specialMatterials] = 0
             }
-        }
+        }else{
+            if(material in junkMaterial){
+               junkMaterial[material] += qty;
+            }else{
+                junkMaterial[material] = qty;
+            }
     }
     console.log(`${specilaFragment} obtained!`);
 }
