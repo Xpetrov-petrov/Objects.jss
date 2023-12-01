@@ -1,0 +1,44 @@
+function solve(str){
+    let keyMaterials = {shards: 0, fragments: 0, motes: 0};
+    let junkMaterial = {};
+    
+    let legendaries = { shards: "Shadowmourne", fragments: "Valanyr", motes: "Dragonwrath"};
+    
+    
+    let materialArr = str.split(' ');
+    
+    for(let i = 0; i < materialArr.length; i += 2){
+    
+        let qty = Number(materialArr[i]);
+        let material = materialArr[i+1].toLowerCase();
+    
+        if(material in keyMaterials){
+            keyMaterials[material] += qty;
+    
+            if(keyMaterials[material] >= 250){
+             let legendaryWon = legendaries[material];
+             console.log(`${legendaryWon} obtained!`);
+    
+             keyMaterials[material] -= 250;
+             break;
+            }
+        }else{
+            if(material in junkMaterial){
+               junkMaterial[material] += qty;
+            }else{
+                junkMaterial[material] = qty;
+            }
+        }
+     }
+     let keyMaterialsEntries = Object.entries(keyMaterials).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    
+     for(let [material,qty] of keyMaterialsEntries){
+        console.log(`${material}: ${qty}`);
+     }
+     let junkMaterialEntryes =  Object.entries(junkMaterial).sort((a,b) => a[0].localeCompare(b[0]));
+     
+     for(let [material,qty] of junkMaterialEntryes){
+        console.log(`${material}: ${qty}`);
+     }
+    }
+    solve('3 Motes 5 stones 5 Shards 6 leathers 255 fragments 7 Shards')
