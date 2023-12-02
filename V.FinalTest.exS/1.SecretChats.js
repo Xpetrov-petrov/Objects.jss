@@ -18,7 +18,8 @@ function SecretChat(input) {  // задача за текстообработк�
             let firstIndex = message.indexOf(substring);
             if(firstIndex == -1){
                 console.log('error');
-                continue;
+                continue;  
+            
             } 
             let left = message.slice(0,firstIndex);
             let right = message.slice(firstIndex + substring.length);

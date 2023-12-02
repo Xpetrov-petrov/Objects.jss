@@ -18,8 +18,14 @@ function SecretChat(arr){
         case'Reverse':
        let substring = tokens[1];
        let firstIndex = word.indexOf(substring);
-       console.log(firstIndex);
-        break;
+       if(firstIndex == -1){
+        console.log('error');
+        continue;
+       }
+       let left = message.slice(0,firstIndex);
+       let right = message.slice(firstIndex + substring.length);
+       message = left + right + substring.split('').reverse().join('');
+       break;
 
         case'InsertSpace':
         break;
